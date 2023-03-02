@@ -1,9 +1,9 @@
 //Ejercicio "Mi primer JavaScript"
-/*let primerNombre='Laura';
+let primerNombre='Laura';
 console.log(primerNombre);
 let segundoNombre='Nathalia';
 console.log(segundoNombre);
-let primerApellido='Garcia';
+let primerApellido='García';
 console.log(primerApellido);
 let segundoApellido='Acuña';
 console.log(segundoApellido);
@@ -11,6 +11,9 @@ let edad=23;
 console.log(edad);
 let miPasatiempo='Leer';
 console.log(miPasatiempo);
+let colorFavorito='Azul';
+console.log(colorFavorito);
+let colorMenosMeGusta='Café' 
 const persona={
     nombre:'Laura',
     apellido: 'Garcia',
@@ -76,7 +79,7 @@ switch(MASCOTA.animal){
     default:
         console.log("La mascota no se encuetra dentro del grupo definido");    
         break;                   
-}*/
+}
 
 //OPERANDO ARRAYS Y OBJETOS
 const empresario={
@@ -151,6 +154,64 @@ for(let flor of flores){
     console.log(flor);
 }
 for(let datosEmpresario in empresario){
-    console.log(datosEmpresario + " "+empresario[ datosEmpresario ])
+    console.log(datosEmpresario + ": "+empresario[ datosEmpresario ])
 }
 
+let cont=0;
+while(cont<flores2.length){
+    console.log(flores2[cont]);
+    cont+=1;
+}
+
+//Ejercicio "Aplicando Lógica"
+function datosPersonales(nombre,edad, ciudadDeResidebcua){
+    return "Hola mi nombre es "+nombre+", tengo "+edad+" años "+"y vivo en "+ciudadDeResidebcua;
+}
+let datos =datosPersonales("Luara",23,"Bogotá");
+console.log(datos);
+
+function calcularIVA(precio){
+    let iva=21;
+    return (precio*iva)/100;
+}
+let precio=calcularIVA(100000);
+console.log(precio);
+
+function sumarNumerosArray(numeros){
+    let suma=0;
+    for(let numero of numeros){
+        suma+=numero;
+    }
+    return suma;
+}
+let arraySuma=[10,20,30,40,50];
+let sumaT=sumarNumerosArray(arraySuma);
+console.log(sumaT);
+
+function puedeConducir(edad){
+    if(edad>18){
+        alert("Ya puedes conducir");
+        return "Ya puedes conducir";
+    }else{
+        alert("Aún no puedes conducir");
+        return "Aún no puedes conducir";
+    }
+}
+
+console.log(puedeConducir(19));
+console.log(puedeConducir(17));
+
+//DOM
+document.getElementById("nombre").innerHTML=primerNombre;
+document.getElementById("apellido").innerHTML=primerApellido;
+document.getElementById("pasatiempo").innerHTML=miPasatiempo;
+document.getElementById("colorF").innerHTML=colorFavorito;
+document.getElementById("colorN").innerHTML=colorMenosMeGusta;
+//QUERY_SELECTOR
+
+const titulo=document.querySelector("h1");
+console.log(titulo);
+const query=document.querySelectorAll(".example")
+console.log(query);
+const classEx=document.getElementsByClassName(".example");
+console.log(classEx);
